@@ -121,7 +121,7 @@ function moveWithinWalls(fromCell, toCell) {
  * @param {*} grid - the maze grid
  */
 function primsAlgorithm(grid) {
-    let startCell = grid[0][0];
+    let startCell = grid[5][8];
     startCell.visited = true;
 
     let walls = getCellWalls(grid, startCell);
