@@ -26,4 +26,37 @@ function displayMaze(mazeData) {
     });
 }
 
-export { displayMaze };
+let mazeDataGenerated = initializeGrid(15, 15);
+
+/**
+ * Initiazlize the maze grid with the given number of rows and columns
+ * @param {*} rows 
+ * @param {*} cols 
+ * @returns A new maze grid
+ */
+function initializeGrid(rows, cols) {
+    let grid = [];
+    for (let row = 0; row < rows; row++) {
+        let gridRow = [];
+        for (let col = 0; col < cols; col++) {
+            let cell = {
+                row: row,     
+                col: col,      
+                north: true,
+                east: true,
+                south: true,
+                west: true,
+                visited: false
+            };
+            gridRow.push(cell);
+        }
+        grid.push(gridRow);
+    }
+    return { maze: grid, rows: rows, cols: cols };
+}
+
+function reset(){
+    window.location.reload();   
+}
+
+export { displayMaze, mazeDataGenerated, reset};

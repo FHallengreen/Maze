@@ -17,6 +17,11 @@ export class Stack {
     peek() {
         return this.linkedList.first();
     }
+
+    isEmpty() {
+        return this.linkedList.isEmpty();
+    }
+
     traverse(action) {
         let currentNode = this.linkedList.head;
         while (currentNode !== null) {

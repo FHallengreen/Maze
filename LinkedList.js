@@ -66,6 +66,10 @@ export class LinkedList {
 		}
 	}
 
+	isEmpty() {
+		return this.head === null;
+	}
+
 	removeNode(node) {
 		if (node === null) return;
 
@@ -215,33 +219,33 @@ export class LinkedList {
 		if (index < 0) {
 			throw new Error("Index out of bounds");
 		}
-		
-		if (index === 0 || this.head === null) { 
+
+		if (index === 0 || this.head === null) {
 			this.addFirst(payload);
 			return;
 		}
-	
+
 		let node = this.nodeAt(index);
 		if (node === null) {
 			throw new Error("Index out of bounds");
 		}
-	
+
 		this.insertBeforeNode(payload, node);
 	}
-	
+
 	insertAfter(index, payload) {
 		if (index < 0) {
 			throw new Error("Index out of bounds");
 		}
-	
+
 		let node = this.nodeAt(index);
 		if (node === null) {
 			throw new Error("Index out of bounds");
 		}
-	
+
 		this.insertAfterNode(payload, node);
 	}
-	
+
 
 	first() {
 		return this.head ? this.head.payload : null;
